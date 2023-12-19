@@ -15,7 +15,11 @@ import { UserContextProvider } from './Components/context/UserContext';
 import { User } from './Components/context/User';
 import { Timer } from './Components/ref/MutableRef';
 import { Counter as Counter2} from './Components/class/Counter';
-import { List } from './Components/generics/List';
+// import { List } from './Components/generics/List';
+import { RandomNumber } from './Components/restriction/RandomNumber';
+import { Toast } from './Components/templateLiterals/Toast';
+import { ButtonProps as Button2 } from './Components/html/Button';
+import { Text } from './Components/polymorphic/text';
 
 function App() {
 
@@ -54,6 +58,15 @@ function App() {
         status='loading'
         />
       </header>
+      <Text as = 'h1' size = 'lg'>
+        Heading 1
+      </Text>
+      <Text as = 'p' size = 'lg'>
+        Paragraph
+      </Text>
+      <Text as = 'label' htmlFor = 'someId' size = 'lg'>
+        Label
+      </Text>
       <Heading>Placeholder Text</Heading>
       <Oscar>
         <Heading>
@@ -88,14 +101,26 @@ function App() {
         <Counter2
         message='hello'
         />
-        <List
+        {/* <List
         items = {["Red" , "Blue" , "Voilet"]}
         onClick={(item) => console.log(item)}
         />
          <List
         items = {[1  , 2 ,3]}
         onClick={(item) => console.log(item)}
+        /> */}
+        <RandomNumber
+        value={10}
+        isPositive
         />
+        <Toast
+        position={"center"}
+        />
+        <Button2
+        variant="primary"
+        >
+          Primary Button
+          </Button2>
     </div>
   );
 }
